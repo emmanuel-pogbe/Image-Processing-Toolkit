@@ -6,7 +6,7 @@ import os
 
 UPLOAD_FOLDER = "images"
 DOWNLOAD_FOLDER = "converted_images"
-ALLOWED_EXTENSIONS = {'jpg', 'png', 'webp', 'jfif', 'bmp', 'svg', 'avif'}
+ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'webp', 'jfif', 'bmp', 'svg', 'avif'}
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "secret_key_here"
