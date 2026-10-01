@@ -18,19 +18,16 @@ def convert_pdf_to_docx(input_path, output_path):
         (success: bool, error_message: str, output_filename: str)
     """
     try:
-        # Validate input file exists
         if not os.path.exists(input_path):
             return False, "Input PDF file not found", ""
         
         # Create output directory if it doesn't exist
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         
-        # Perform the conversion using pdf2docx Converter
         converter = Converter(input_path)
         converter.convert(output_path)
         converter.close()
         
-        # Verify output file was created
         if not os.path.exists(output_path):
             return False, "PDF conversion failed - output file was not created", ""
         
