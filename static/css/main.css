@@ -1,0 +1,289 @@
+/* 
+   Main CSS: Base styles, typography, color palette, and utility classes
+*/
+
+/* ==================== CSS Reset & Defaults ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, Helvetica, sans-serif;
+    background-color: #FFFFFF;
+    color: #333333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* ==================== Color Palette ==================== */
+:root {
+    --primary-blue: #0066FF;
+    --white: #FFFFFF;
+    --light-gray: #F5F5F5;
+    --dark-gray: #333333;
+    --error-red: #FF4444;
+    --error-bg: #FFE5E5;
+    --success-green: #00CC00;
+    --success-bg: #E5FFE5;
+}
+
+/* ==================== Typography ==================== */
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 16px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 24px;
+    margin-top: 32px;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 12px;
+}
+
+p {
+    margin-bottom: 12px;
+    color: #333333;
+}
+
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: all 200ms ease-out;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0050cc;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+/* ==================== Container ==================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.main-content {
+    flex: 1;
+    min-height: calc(100vh - 64px - 200px);
+    padding: 0px 0;
+}
+
+/* ==================== Buttons ==================== */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 200ms ease-out;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+/* Override default link styles for buttons */
+.btn,
+.btn:hover,
+.btn:focus {
+    text-decoration: none;
+    color: white;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0050cc;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background-color: var(--light-gray);
+    color: #333333;
+    border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-success {
+    background-color: var(--success-green);
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #00AA00;
+}
+
+.btn-large {
+    padding: 14px 40px;
+    font-size: 16px;
+    width: auto;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 102, 255, 0.25);
+}
+
+.btn-large:hover {
+    background-color: #0050cc;
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+/* ==================== Links & Lists ==================== */
+ul, ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* ==================== Alerts ==================== */
+.alert {
+    padding: 16px 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.alert-error {
+    background-color: var(--error-bg);
+    color: var(--error-red);
+    border-left: 4px solid var(--error-red);
+}
+
+.alert-success {
+    background-color: var(--success-bg);
+    color: var(--success-green);
+    border-left: 4px solid var(--success-green);
+}
+
+.alert-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: inherit;
+    padding: 0;
+    margin-left: 16px;
+}
+
+.alert-close:hover {
+    opacity: 0.7;
+}
+
+/* ==================== Text Utilities ==================== */
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: #999;
+}
+
+.error-text {
+    color: var(--error-red);
+    font-size: 14px;
+}
+
+.page-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 32px;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 24px;
+}
+
+/* ==================== Spacing Utilities ==================== */
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mt-4 { margin-top: 32px; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.mb-4 { margin-bottom: 32px; }
+
+.p-1 { padding: 8px; }
+.p-2 { padding: 16px; }
+.p-3 { padding: 24px; }
+.p-4 { padding: 32px; }
+
+/* ==================== Flexbox ==================== */
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ==================== Display & Visibility ==================== */
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+/* ==================== Scroll behavior ==================== */
+html {
+    scroll-behavior: smooth;
+}

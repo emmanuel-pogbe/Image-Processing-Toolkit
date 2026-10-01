@@ -1,15 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<div class="container">
-    <div class="option">
-        <a href="/image_convert">Image Convertor</a>
-        <a href="/remove_bg">Remove Image Background</a>
+{% extends "base.html" %}
+
+{% block title %}Image Processing Toolkit - Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Process Your Images and Documents Online</h1>
+        <p class="hero-subtitle">Fast, simple, and secure conversion tools</p>
+        <a href="/image-convert" class="btn btn-primary btn-large">Get Started</a>
     </div>
-</div>
-</body>
-</html>
+</section>
+
+<!-- Tools Section -->
+<section class="tools-section container">
+    <h2>Our Tools</h2>
+    
+    <div class="cards-grid">
+        <!-- Image Converter Card -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">🖼️</div>
+                <h3>Image Converter</h3>
+            </div>
+            <div class="card-body">
+                <p class="card-description">
+                    Convert images between PNG, JPG, WebP, and BMP formats. Support for multiple input formats including SVG and AVIF.
+                </p>
+            </div>
+            <div class="card-footer">
+                <a href="/image-convert" class="btn btn-primary">Start Converting</a>
+            </div>
+        </div>
+        
+        <!-- PDF to Word Card -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">📄</div>
+                <h3>PDF to Word</h3>
+            </div>
+            <div class="card-body">
+                <p class="card-description">
+                    Convert PDF documents to editable Word format. Supports multi-page PDFs with formatting preservation.
+                </p>
+            </div>
+            <div class="card-footer">
+                <a href="/pdf-to-word" class="btn btn-primary">Convert PDF</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

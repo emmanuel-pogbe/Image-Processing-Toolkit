@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}PDF to Word Converter - Image Processing Toolkit{% endblock %}
+
+{% block content %}
+<div class="converter-container container">
+    <h1>PDF to Word Converter</h1>
+    <p class="page-subtitle">Convert PDF documents to editable Word format</p>
+    
+    <!-- Upload Form -->
+    <form id="pdfForm" class="converter-form" novalidate>
+        <!-- Drag-Drop Zone -->
+        <div class="drop-zone" id="dropZone" tabindex="0" aria-label="PDF file upload drop zone">
+            <svg class="upload-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+            <p><strong>Drag and drop your PDF here</strong></p>
+            <p style="color: #666; font-size: 14px;">or click to select a file</p>
+            <input type="file" id="pdfInput" class="file-input" accept=".pdf,application/pdf" aria-label="PDF file input">
+        </div>
+        
+        <!-- Selected File Info -->
+        <div id="fileInfo" class="file-info" style="display: none;">
+            <p><strong id="fileName"></strong> <span id="fileSize"></span></p>
+        </div>
+        
+        <!-- Error Display -->
+        <div id="errorMessage" class="error-text" style="display: none; color: #FF4444; margin: 12px 0; font-size: 14px;"></div>
+        
+        <!-- Progress Bar -->
+        <div id="progressContainer" class="progress-container" style="display: none;" aria-live="polite">
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+            <p id="progressText">0%</p>
+        </div>
+        
+        <!-- Upload Button -->
+        <button type="submit" class="btn btn-primary btn-large" id="uploadBtn">Upload</button>
+    </form>
+    
+    <!-- Success Screen -->
+    <div id="successScreen" class="conversion-success-screen" style="display: none;" role="region" aria-live="polite">
+        <button id="backBtn" class="back-button" aria-label="Go back to upload" title="Upload another file">
+            <span class="back-icon">←</span>
+        </button>
+        
+        <div class="success-content">
+            <h2 id="successTitle">Your PDF has been converted!</h2>
+            
+            <div class="download-card">
+                <a id="downloadLink" href="#" class="download-button" download>
+                    <span class="download-icon">⬇</span>
+                    <span class="download-text">Download converted document</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Error Alert -->
+    <div id="errorAlert" class="alert alert-error" style="display: none;" role="alert" aria-live="assertive">
+        <p id="errorAlertText"></p>
+        <button class="alert-close" aria-label="Close alert">&times;</button>
+    </div>
+</div>
+{% endblock %}

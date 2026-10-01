@@ -1,0 +1,20 @@
+<header class="header">
+    <div class="header-content">
+        
+        <!-- Navigation Menu -->
+        <nav class="nav-menu" id="navMenu">
+            <a href="/" class="nav-link" {% if request.endpoint == 'index' %}aria-current="page"{% endif %}>Home</a>
+            <a href="/image-convert" class="nav-link" {% if request.endpoint == 'image_convert' %}aria-current="page"{% endif %}>Image Tools</a>
+            <a href="/pdf-to-word" class="nav-link" {% if request.endpoint == 'pdf_to_word' %}aria-current="page"{% endif %}>PDF Tools</a>
+        </nav>
+        
+    
+        
+        <!-- Hamburger Menu (Mobile) -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
